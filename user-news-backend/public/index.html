@@ -1,0 +1,110 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User News Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        input[type="file"] {
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="newsForm" action="/submit" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="newsName">News Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="newsName"
+                    name="newsName"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="video">Upload News Video</label>
+                <input
+                    type="file"
+                    class="form-control-file"
+                    id="video"
+                    name="video"
+                    accept="video/*"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="userDetails">Add your Details</label>
+                <textarea
+                    class="form-control"
+                    id="userDetails"
+                    name="userDetails"
+                    rows="4"
+                    required
+                ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
+    </div>
+</body>
+</html>
